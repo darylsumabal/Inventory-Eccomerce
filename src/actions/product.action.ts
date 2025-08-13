@@ -11,7 +11,7 @@ export async function createProduct(data: Prisma.ProductsCreateInput) {
       },
     });
     console.log(newProduct);
-    revalidatePath("/product");
+    revalidatePath("/", "layout");
     return newProduct;
   } catch (error) {
     console.log(error);
@@ -67,7 +67,8 @@ export async function editProduct(
         ...data,
       },
     });
-    revalidatePath("/product");
+    revalidatePath("/", "layout");
+
     return updateProduct;
   } catch (error) {
     console.log(error);
@@ -82,7 +83,7 @@ export async function deleteProduct(id: string) {
         id: id,
       },
     });
-    revalidatePath("/product");
+    revalidatePath("/", "layout");
     return deleteProduct;
   } catch (error) {
     console.log(error);
