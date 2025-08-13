@@ -10,7 +10,6 @@ export default async function Page({
 }) {
   const params = await searchParams;
   const products = await getAllProducts(params?.name || "");
-  console.log(process.env.DATABASE_URL);
 
   return (
     <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6 px-4 lg:px-6">
